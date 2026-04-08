@@ -23,5 +23,12 @@ export const categoryType = defineType({
             to: [{ type: 'category' }],
             description: 'Select the parent category if this is a sub-category.',
         }),
+        defineField({
+            name: 'specificationTemplate',
+            title: 'Specification Template',
+            type: 'reference',
+            to: [{ type: 'specificationTemplate' }],
+            description: 'Define a set of reusable specification labels for all products in this category.',
+        }),
     ],
 })
