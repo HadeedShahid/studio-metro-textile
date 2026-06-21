@@ -53,6 +53,23 @@ export const productType = defineType({
             to: [{ type: 'specificationTemplate' }],
             description: 'Optionally override the specification template defined at the category level.',
         }),
+        // SEO fields
+        defineField({
+            name: 'metaTitle',
+            title: 'Meta Title',
+            type: 'string',
+            description: 'Appears in the browser tab and Google search headline. Keep under 60 characters. Leave blank to auto-generate from product title.',
+            validation: (rule) => rule.max(60).warning('Meta title should be under 60 characters.'),
+        }),
+        defineField({
+            name: 'metaDescription',
+            title: 'Meta Description',
+            type: 'text',
+            rows: 3,
+            description: 'Shown as the snippet in Google search results. Keep under 155 characters.',
+            validation: (rule) => rule.max(155).warning('Meta description should be under 155 characters.'),
+        }),
+
         defineField({
             name: 'specifications',
             title: 'Specifications',
