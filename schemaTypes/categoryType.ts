@@ -23,6 +23,14 @@ export const categoryType = defineType({
             validation: (rule) => rule.required(),
         }),
         defineField({
+            name: 'image',
+            title: 'Catalog Image',
+            type: 'image',
+            group: 'content',
+            options: { hotspot: true },
+            description: 'Shown in the Product Catalog carousel on the homepage.',
+        }),
+        defineField({
             name: 'parent',
             title: 'Parent Category',
             type: 'reference',
